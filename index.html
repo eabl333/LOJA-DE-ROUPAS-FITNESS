@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- SEO & Metadados -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Loja de moda feminina premium. Vestidos, conjuntos, blusas, calças e acessórios com estilo e essência. Compre online com segurança e envio para todo o Brasil." />
+  <title>Essenza · Moda Feminina Premium</title>
+
+  <!-- Dica: futuramente integrar fonte externa (Google Fonts) via @import ou link, 
+       mas o CSS principal permanece em css/style.css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- A fonte pode ser adicionada diretamente no CSS para manter este HTML limpo -->
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ============================= -->
+  <!-- HEADER / NAVEGAÇÃO PRINCIPAL -->
+  <!-- ============================= -->
+  <header class="site-header" id="topo">
+    <div class="container header-container">
+      <!-- Logo / Nome da loja -->
+      <a href="#topo" class="logo" aria-label="Essenza - Página inicial">
+        ESSENZA<span class="logo-dot">.</span>
+      </a>
+
+      <!-- Menu de navegação (desktop / tablet) -->
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link">Início</a></li>
+          <li><a href="#produtos" class="nav-link">Produtos</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre nós</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações à direita: carrinho + botão comprar -->
+      <div class="header-actions">
+        <!-- Ícone de carrinho (acessível, com aria-label) -->
+        <button class="icon-button cart-button" aria-label="Abrir carrinho de compras" title="Carrinho">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1.5"></circle>
+            <circle cx="20" cy="21" r="1.5"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="visually-hidden">Carrinho de compras</span>
+        </button>
+
+        <!-- Botão destacado "Comprar agora" -->
+        <a href="#produtos" class="btn btn-primary btn-header-buy">Comprar agora</a>
+
+        <!-- Menu hambúrguer (visível no mobile) -->
+        <button class="icon-button hamburger" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile oculto por padrão (controlado via JS) -->
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menu móvel">
+      <ul class="mobile-nav-list">
+        <li><a href="#inicio" class="mobile-nav-link">Início</a></li>
+        <li><a href="#produtos" class="mobile-nav-link">Produtos</a></li>
+        <li><a href="#sobre" class="mobile-nav-link">Sobre nós</a></li>
+        <li><a href="#contato" class="mobile-nav-link">Contato</a></li>
+        <li><a href="#produtos" class="btn btn-outline mobile-buy-link">Comprar agora</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main id="inicio">
+    <!-- ============================= -->
+    <!-- SEÇÃO HERO / BANNER PRINCIPAL -->
+    <!-- ============================= -->
+    <section class="hero-section" aria-labelledby="hero-titulo">
+      <div class="container hero-container">
+        <div class="hero-text">
+          <span class="hero-eyebrow">Nova coleção · Outono Inverno</span>
+          <h1 id="hero-titulo" class="hero-title">Seu estilo. Sua essência.</h1>
+          <p class="hero-description">
+            Peças exclusivas que valorizam sua personalidade. Qualidade, sofisticação e 
+            design atemporal para todas as ocasiões.
+          </p>
+          <div class="hero-actions">
+            <a href="#produtos" class="btn btn-primary">Ver coleção</a>
+            <a href="#contato" class="btn btn-outline">Fale conosco</a>
+          </div>
+        </div>
+        <!-- Área para imagem/banner (substitua o src posteriormente) -->
+        <div class="hero-media">
+          <!-- URL de exemplo: modelo de moda feminina, substituível facilmente -->
+          <img 
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1470&auto=format&fit=crop" 
+            alt="Mulher elegante com vestido moderno em tons neutros" 
+            class="hero-image"
+            loading="lazy"
+          />
+          <div class="hero-image-overlay" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SEÇÃO CATEGORIAS -->
+    <!-- ============================= -->
+    <section class="categories-section" aria-labelledby="categorias-titulo">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="categorias-titulo" class="section-title">Categorias</h2>
+          <p class="section-subtitle">Escolha a categoria que combina com você</p>
+        </div>
+
+        <div class="categories-grid">
+          <!-- Card: Vestidos -->
+          <article class="category-card">
+            <div class="category-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1469&auto=format&fit=crop" alt="Vestido feminino elegante" loading="lazy" />
+            </div>
+            <h3 class="category-name">Vestidos</h3>
+            <a href="#produtos" class="category-link" aria-label="Ver produtos da categoria Vestidos">Ver produtos</a>
+          </article>
+
+          <!-- Card: Conjuntos -->
+          <article class="category-card">
+            <div class="category-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1374&auto=format&fit=crop" alt="Conjunto feminino moderno" loading="lazy" />
+            </div>
+            <h3 class="category-name">Conjuntos</h3>
+            <a href="#produtos" class="category-link" aria-label="Ver produtos da categoria Conjuntos">Ver produtos</a>
+          </article>
+
+          <!-- Card: Blusas -->
+          <article class="category-card">
+            <div class="category-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?q=80&w=1374&auto=format&fit=crop" alt="Blusa feminina casual" loading="lazy" />
+            </div>
+            <h3 class="category-name">Blusas</h3>
+            <a href="#produtos" class="category-link" aria-label="Ver produtos da categoria Blusas">Ver produtos</a>
+          </article>
+
+          <!-- Card: Calças -->
+          <article class="category-card">
+            <div class="category-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1374&auto=format&fit=crop" alt="Calça feminina de alfaiataria" loading="lazy" />
+            </div>
+            <h3 class="category-name">Calças</h3>
+            <a href="#produtos" class="category-link" aria-label="Ver produtos da categoria Calças">Ver produtos</a>
+          </article>
+
+          <!-- Card: Acessórios -->
+          <article class="category-card">
+            <div class="category-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=1470&auto=format&fit=crop" alt="Acessórios femininos: bolsa e óculos" loading="lazy" />
+            </div>
+            <h3 class="category-name">Acessórios</h3>
+            <a href="#produtos" class="category-link" aria-label="Ver produtos da categoria Acessórios">Ver produtos</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SEÇÃO DESTAQUES (produtos dinâmicos) -->
+    <!-- ============================= -->
+    <section class="featured-section" id="produtos" aria-labelledby="destaques-titulo">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="destaques-titulo" class="section-title">Mais procurados</h2>
+          <p class="section-subtitle">Os queridinhos das nossas clientes</p>
+        </div>
+        <!-- Container vazio: produtos serão injetados via JavaScript/Supabase futuramente -->
+         <div id="products-container" class="featured-grid" aria-live="polite">
+          <!-- Produtos carregados dinamicamente -->
+        </div>
+        <div class="featured-loading" hidden>Carregando produtos...</div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SEÇÃO BENEFÍCIOS -->
+    <!-- ============================= -->
+    <section class="benefits-section" aria-labelledby="beneficios-titulo">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="beneficios-titulo" class="section-title">Por que comprar na Essenza?</h2>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">🔒</div>
+            <h3 class="benefit-title">Compra segura</h3>
+            <p class="benefit-text">Ambiente criptografado e proteção total dos seus dados.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">💳</div>
+            <h3 class="benefit-title">Pagamento facilitado</h3>
+            <p class="benefit-text">Pix, cartão em até 6x sem juros e boleto.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">🚚</div>
+            <h3 class="benefit-title">Envio para todo o Brasil</h3>
+            <p class="benefit-text">Entrega rápida e rastreável para qualquer região.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">💬</div>
+            <h3 class="benefit-title">Atendimento pelo WhatsApp</h3>
+            <p class="benefit-text">Dúvidas e auxílio de moda com nossas consultoras.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SEÇÃO SOBRE A LOJA -->
+    <!-- ============================= -->
+    <section class="about-section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container about-container">
+        <div class="about-media">
+          <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1471&auto=format&fit=crop" alt="Peças de moda feminina em arara de loja" loading="lazy" />
+        </div>
+        <div class="about-content">
+          <span class="hero-eyebrow">Nossa história</span>
+          <h2 id="sobre-titulo" class="section-title about-title">Moda que nasce do seu jeito</h2>
+          <p class="about-text">
+            A Essenza nasceu para celebrar a mulher real, com roupas que unem conforto, 
+            qualidade e um design sofisticado. Trabalhamos com curadoria de tecidos nobres, 
+            modelagens impecáveis e um olhar atento às tendências atemporais.
+          </p>
+          <p class="about-text">
+            Mais que vestir, queremos inspirar confiança e atitude. Atendimento humanizado, 
+            entrega cuidadosa e uma experiência de compra pensada nos detalhes.
+          </p>
+          <a href="#produtos" class="btn btn-outline">Conheça a coleção</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SEÇÃO INSTAGRAM / REDES SOCIAIS -->
+    <!-- ============================= -->
+    <section class="instagram-section" aria-labelledby="instagram-titulo">
+      <div class="container instagram-container">
+        <h2 id="instagram-titulo" class="section-title">Acompanhe nossas novidades</h2>
+        <p class="instagram-handle">@essenza.moda</p>
+        <p class="section-subtitle">Looks diários, bastidores e promoções exclusivas</p>
+        <!-- Link facilmente editável (troque o href) -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary instagram-button">
+          Seguir no Instagram
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SEÇÃO DEPOIMENTOS -->
+    <!-- ============================= -->
+    <section class="testimonials-section" aria-labelledby="depoimentos-titulo">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="depoimentos-titulo" class="section-title">O que nossas clientes dizem</h2>
+          <p class="section-subtitle">Avaliações reais de quem já viveu a experiência Essenza</p>
+        </div>
+        <div class="testimonials-grid">
+          <!-- Depoimento 1 -->
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <p class="testimonial-text">
+              "Peças lindas e de ótima qualidade! O vestido que comprei superou as expectativas. 
+              Atendimento rápido e entrega antes do prazo."
+            </p>
+            <footer class="testimonial-author">— Mariana S.</footer>
+          </article>
+
+          <!-- Depoimento 2 -->
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <p class="testimonial-text">
+              "Apaixonada pela nova coleção! Roupa com caimento perfeito, tecido maravilhoso. 
+              Já virei cliente fiel."
+            </p>
+            <footer class="testimonial-author">— Camila R.</footer>
+          </article>
+
+          <!-- Depoimento 3 -->
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="4 de 5 estrelas">★★★★☆</div>
+            <p class="testimonial-text">
+              "Excelente experiência de compra. Atendimento pelo WhatsApp me ajudou a escolher 
+              o tamanho certo. Com certeza voltarei a comprar."
+            </p>
+            <footer class="testimonial-author">— Patrícia L.</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SEÇÃO NEWSLETTER -->
+    <!-- ============================= -->
+    <section class="newsletter-section" aria-labelledby="newsletter-titulo">
+      <div class="container newsletter-container">
+        <h2 id="newsletter-titulo" class="section-title">Receba novidades e promoções</h2>
+        <p class="section-subtitle">Cadastre seu e-mail e fique por dentro de tudo</p>
+        <form class="newsletter-form" action="#" method="post">
+          <label for="newsletter-email" class="visually-hidden">Seu melhor e-mail</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Digite seu e-mail" required />
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+        <p class="newsletter-privacy">Ao cadastrar você concorda com nossa política de privacidade.</p>
+      </div>
+    </section>
+
+        </section>
+
+    <!-- ============================= -->
+    <!-- MODAL DE PRODUTO -->
+    <!-- ============================= -->
+    <div id="product-modal" class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-name" style="display: none;">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-content" role="document">
+            <!-- Botão fechar -->
+            <button class="modal-close" data-close-modal aria-label="Fechar modal do produto" title="Fechar">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="modal-body">
+                <!-- Imagem do produto -->
+                <div class="modal-image-wrapper">
+                    <img id="modal-product-image" src="" alt="" class="modal-product-image" />
+                </div>
+
+                <!-- Informações do produto -->
+                <div class="modal-info">
+                    <span id="modal-product-category" class="modal-product-category"></span>
+                    <h3 id="modal-product-name" class="modal-product-name"></h3>
+                    <p id="modal-product-description" class="modal-product-description"></p>
+                    <div class="modal-price">
+                        <span id="modal-product-old-price" class="modal-old-price"></span>
+                        <span id="modal-product-price" class="modal-price-value"></span>
+                    </div>
+
+                    <!-- Botões de ação -->
+                    <div class="modal-actions">
+                        <a id="modal-whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                            Comprar pelo WhatsApp
+                        </a>
+                        <button id="modal-close-btn" class="btn btn-outline" data-close-modal>
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================= -->
+<!-- MODAL DO CARRINHO -->
+<!-- ============================= -->
+<div id="cart-modal" class="product-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title" style="display: none;">
+    <div class="modal-backdrop" data-close-cart></div>
+    <div class="modal-content cart-modal-content" role="document">
+        <button class="modal-close" data-close-cart aria-label="Fechar carrinho" title="Fechar">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <h2 id="cart-modal-title" class="modal-title">Seu Carrinho</h2>
+        
+        <div id="cart-items" class="cart-items">
+            <!-- Itens do carrinho serão inseridos aqui -->
+        </div>
+
+        <div id="cart-empty" class="cart-empty" style="display: none;">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-value">R$ 0,00</span>
+        </div>
+
+        <div class="cart-actions">
+            <button id="cart-checkout-btn" class="btn btn-primary">Finalizar compra</button>
+            <button id="cart-clear-btn" class="btn btn-outline">Limpar carrinho</button>
+        </div>
+    </div>
+</div>
+  </main>
+    <!-- ============================= -->
+<!-- MODAL DE PRODUTO -->
+<!-- ============================= -->
+<div id="product-modal" class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-name" style="display: none;">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content" role="document">
+        <!-- Botão fechar -->
+        <button class="modal-close" data-close-modal aria-label="Fechar modal do produto" title="Fechar">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <div class="modal-body">
+            <!-- Imagem do produto -->
+            <div class="modal-image-wrapper">
+                <img id="modal-product-image" src="" alt="" class="modal-product-image" />
+            </div>
+
+            <!-- Informações do produto -->
+            <div class="modal-info">
+                <span id="modal-product-category" class="modal-product-category"></span>
+                <h3 id="modal-product-name" class="modal-product-name"></h3>
+                <p id="modal-product-description" class="modal-product-description"></p>
+                <div class="modal-price">
+                    <span id="modal-product-old-price" class="modal-old-price"></span>
+                    <span id="modal-product-price" class="modal-price-value"></span>
+                </div>
+
+                <!-- Botões de ação -->
+                <div class="modal-actions">
+                    <a id="modal-whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                        Comprar pelo WhatsApp
+                    </a>
+                    <button id="modal-close-btn" class="btn btn-outline" data-close-modal>
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </main>
+
+  <!-- ============================= -->
+  <!-- RODAPÉ / FOOTER -->
+  <!-- ============================= -->
+  <footer class="site-footer" id="contato">
+    <div class="container footer-grid">
+      <!-- Coluna 1: logo + descrição -->
+      <div class="footer-col footer-brand">
+        <a href="#topo" class="logo footer-logo">ESSENZA<span class="logo-dot">.</span></a>
+        <p class="footer-description">
+          Moda feminina que une sofisticação, conforto e estilo para todos os momentos.
+        </p>
+      </div>
+
+      <!-- Coluna 2: Links rápidos -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Links rápidos</h3>
+        <ul class="footer-list">
+          <li><a href="#inicio" class="footer-link">Início</a></li>
+          <li><a href="#produtos" class="footer-link">Produtos</a></li>
+          <li><a href="#sobre" class="footer-link">Sobre nós</a></li>
+          <li><a href="#contato" class="footer-link">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Produtos -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Produtos</h3>
+        <ul class="footer-list">
+          <li><a href="#produtos" class="footer-link">Vestidos</a></li>
+          <li><a href="#produtos" class="footer-link">Conjuntos</a></li>
+          <li><a href="#produtos" class="footer-link">Blusas</a></li>
+          <li><a href="#produtos" class="footer-link">Calças</a></li>
+          <li><a href="#produtos" class="footer-link">Acessórios</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Contato e redes -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Contato</h3>
+        <ul class="footer-list contact-list">
+          <li>
+            <a href="https://wa.me/5512991372581" target="_blank" rel="noopener" class="footer-link">
+              WhatsApp: (12) 99137-2581
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-link">Instagram: @essenza.moda</a>
+          </li>
+          <li><a href="mailto:contato@essenza.com.br" class="footer-link">contato@essenza.com.br</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">📷</a>
+          <a href="https://wa.me/5512991372581" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright">© 2026 Essenza · Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="#" class="legal-link">Política de privacidade</a>
+          <span class="legal-separator">|</span>
+          <a href="#" class="legal-link">Termos de uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Biblioteca oficial do Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Configuração do Supabase -->
+  <script src="js/supabase.js"></script>
+
+  <!-- JavaScript dos produtos -->
+  <script src="js/produtos.js"></script> 
+
+  <!-- JavaScript principal -->
+  <script src="js/script.js"></script>
+</body>
+</html>

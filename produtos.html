@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- SEO & Metadados -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo de moda feminina Essenza. Vestidos, conjuntos, blusas, calças e acessórios. Encontre peças que combinam com seu estilo." />
+  <title>Catálogo · Essenza Moda Feminina</title>
+
+  <!-- Open Graph básico -->
+  <meta property="og:title" content="Essenza · Catálogo de Moda Feminina" />
+  <meta property="og:description" content="Encontre peças exclusivas que combinam com seu estilo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://essenza.com.br/produtos.html" />
+  <meta property="og:image" content="https://essenza.com.br/images/og-produtos.jpg" />
+  <meta property="og:site_name" content="Essenza" />
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ============================= -->
+  <!-- HEADER / NAVEGAÇÃO PRINCIPAL -->
+  <!-- ============================= -->
+  <header class="site-header" id="topo">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Essenza - Página inicial">
+        ESSENZA<span class="logo-dot">.</span>
+      </a>
+
+      <!-- Menu de navegação desktop/tablet -->
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="produtos.html" class="nav-link active">Produtos</a></li>
+          <li><a href="index.html#sobre" class="nav-link">Sobre nós</a></li>
+          <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações à direita -->
+      <div class="header-actions">
+        <!-- Ícone de carrinho (ainda sem funcionalidade completa) -->
+        <button class="icon-button cart-button" aria-label="Abrir carrinho de compras" title="Carrinho">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1.5"></circle>
+            <circle cx="20" cy="21" r="1.5"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="visually-hidden">Carrinho de compras</span>
+        </button>
+
+        <!-- Botão destacado -->
+        <a href="produtos.html" class="btn btn-primary btn-header-buy">Comprar agora</a>
+
+        <!-- Menu hambúrguer (mobile) -->
+        <button class="icon-button hamburger" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menu móvel">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Início</a></li>
+        <li><a href="produtos.html" class="mobile-nav-link">Produtos</a></li>
+        <li><a href="index.html#sobre" class="mobile-nav-link">Sobre nós</a></li>
+        <li><a href="index.html#contato" class="mobile-nav-link">Contato</a></li>
+        <li><a href="produtos.html" class="btn btn-outline mobile-buy-link">Comprar agora</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main id="catalogo">
+    <!-- ============================= -->
+    <!-- HERO DO CATÁLOGO -->
+    <!-- ============================= -->
+    <section class="catalog-hero" aria-labelledby="catalogo-titulo">
+      <div class="container catalog-hero-container">
+        <span class="hero-eyebrow">Moda feminina premium</span>
+        <h1 id="catalogo-titulo" class="hero-title">Nossa coleção</h1>
+        <p class="hero-description catalog-hero-description">
+          Encontre peças que combinam com seu estilo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- FILTROS E BUSCA -->
+    <!-- ============================= -->
+    <section class="catalog-filters" aria-label="Filtros de produtos">
+      <div class="container filters-container">
+        <!-- Botões de categoria -->
+        <div class="filter-buttons" role="group" aria-label="Filtrar por categoria">
+          <button class="filter-btn active" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="filter-btn" data-filter="vestidos" aria-pressed="false">Vestidos</button>
+          <button class="filter-btn" data-filter="conjuntos" aria-pressed="false">Conjuntos</button>
+          <button class="filter-btn" data-filter="blusas" aria-pressed="false">Blusas</button>
+          <button class="filter-btn" data-filter="calcas" aria-pressed="false">Calças</button>
+          <button class="filter-btn" data-filter="acessorios" aria-pressed="false">Acessórios</button>
+        </div>
+
+        <!-- Campo de busca -->
+        <div class="search-container">
+          <label for="search-input" class="visually-hidden">Buscar produto</label>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Buscar produto..."
+            aria-label="Buscar produto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- ÁREA DE PRODUTOS -->
+    <!-- ============================= -->
+    <section class="products-section" aria-labelledby="produtos-titulo">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="produtos-titulo" class="section-title">Produtos</h2>
+          <p class="section-subtitle">Escolha suas peças favoritas</p>
+        </div>
+
+        <!-- Container principal de produtos (preenchido pelo JavaScript) -->
+        <div id="products-container" class="products-grid" aria-live="polite">
+          <!-- Os cards de produtos serão inseridos dinamicamente aqui -->
+        </div>
+
+        <!-- Estado de carregamento (inicialmente oculto pelo JS ou via CSS) -->
+        <div id="products-loading" class="products-loading" role="status">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <p>Carregando produtos...</p>
+        </div>
+
+        <!-- Estado vazio (inicialmente oculto pelo JS ou via CSS) -->
+        <div id="products-empty" class="products-empty" hidden>
+          <p>Nenhum produto encontrado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- MODAL DE PRODUTO -->
+    <!-- ============================= -->
+    <div id="product-modal" class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-name" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-content" role="document">
+        <!-- Botão fechar -->
+        <button class="modal-close" data-close-modal aria-label="Fechar modal do produto" title="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <div class="modal-body">
+          <!-- Imagem do produto -->
+          <div class="modal-image-wrapper">
+            <img id="modal-product-image" src="" alt="" class="modal-product-image" />
+          </div>
+
+          <!-- Informações do produto -->
+          <div class="modal-info">
+            <span id="modal-product-category" class="modal-product-category"></span>
+            <h3 id="modal-product-name" class="modal-product-name"></h3>
+            <p id="modal-product-description" class="modal-product-description"></p>
+            <div class="modal-price">
+              <span id="modal-product-old-price" class="modal-old-price"></span>
+              <span id="modal-product-price" class="modal-price-value"></span>
+            </div>
+
+            <!-- Botões de ação -->
+            <div class="modal-actions">
+              <a id="modal-whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                Comprar pelo WhatsApp
+              </a>
+              <button id="modal-close-btn" class="btn btn-outline" data-close-modal>
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================= -->
+<!-- MODAL DO CARRINHO -->
+<!-- ============================= -->
+<div id="cart-modal" class="product-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title" style="display: none;">
+    <div class="modal-backdrop" data-close-cart></div>
+    <div class="modal-content cart-modal-content" role="document">
+        <button class="modal-close" data-close-cart aria-label="Fechar carrinho" title="Fechar">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <h2 id="cart-modal-title" class="modal-title">Seu Carrinho</h2>
+        
+        <div id="cart-items" class="cart-items">
+            <!-- Itens do carrinho serão inseridos aqui -->
+        </div>
+
+        <div id="cart-empty" class="cart-empty" style="display: none;">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-value">R$ 0,00</span>
+        </div>
+
+        <div class="cart-actions">
+            <button id="cart-checkout-btn" class="btn btn-primary">Finalizar compra</button>
+            <button id="cart-clear-btn" class="btn btn-outline">Limpar carrinho</button>
+        </div>
+    </div>
+</div>
+  </main>
+
+  <!-- ============================= -->
+  <!-- FOOTER -->
+  <!-- ============================= -->
+  <footer class="site-footer" id="contato">
+    <div class="container footer-grid">
+      <!-- Coluna 1: logo + descrição -->
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo footer-logo">ESSENZA<span class="logo-dot">.</span></a>
+        <p class="footer-description">
+          Moda feminina que une sofisticação, conforto e estilo para todos os momentos.
+        </p>
+      </div>
+
+      <!-- Coluna 2: Links rápidos -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Links rápidos</h3>
+        <ul class="footer-list">
+          <li><a href="index.html" class="footer-link">Início</a></li>
+          <li><a href="produtos.html" class="footer-link">Produtos</a></li>
+          <li><a href="index.html#sobre" class="footer-link">Sobre nós</a></li>
+          <li><a href="index.html#contato" class="footer-link">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Categorias -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Categorias</h3>
+        <ul class="footer-list">
+          <li><a href="produtos.html" class="footer-link">Vestidos</a></li>
+          <li><a href="produtos.html" class="footer-link">Conjuntos</a></li>
+          <li><a href="produtos.html" class="footer-link">Blusas</a></li>
+          <li><a href="produtos.html" class="footer-link">Calças</a></li>
+          <li><a href="produtos.html" class="footer-link">Acessórios</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Contato e redes -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Contato</h3>
+        <ul class="footer-list contact-list">
+          <li>
+            <a href="https://wa.me/55122991372581" target="_blank" rel="noopener" class="footer-link">
+              WhatsApp: (12) 29913-7258
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-link">Instagram: @essenza.moda</a>
+          </li>
+          <li><a href="mailto:contato@essenza.com.br" class="footer-link">contato@essenza.com.br</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">📷</a>
+          <a href="https://wa.me/55122991372581" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright">© 2026 Essenza · Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="#" class="legal-link">Política de privacidade</a>
+          <span class="legal-separator">|</span>
+          <a href="#" class="legal-link">Termos de uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Biblioteca oficial do Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Configuração do Supabase -->
+  <script src="js/supabase.js"></script>
+
+  <!-- JavaScript dos produtos -->
+  <script src="js/produtos.js"></script>
+</body>
+</html>

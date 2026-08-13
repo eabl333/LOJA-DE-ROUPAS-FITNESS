@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Metadados essenciais -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Painel administrativo da loja Costa Reis Moda Fitness - gerencie produtos, categorias e imagens." />
+  <title>Painel Administrativo · Costa Reis Moda Fitness</title>
+
+  <!-- CSS principal (compartilhado com o site) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <!-- ============================= -->
+  <!-- CABEÇALHO DO PAINEL -->
+  <!-- ============================= -->
+  <header class="site-header admin-header">
+    <div class="container header-container">
+      <a href="../index.html" class="logo" aria-label="Costa Reis Moda Fitness - Página inicial">
+        Costa Reis Moda Fitness<span class="logo-dot">.</span>
+      </a>
+      <span class="admin-header-title">Painel Administrativo</span>
+      <span class="admin-status" aria-label="Status da conexão">Conectado</span>
+    </div>
+  </header>
+
+  <!-- ============================= -->
+  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- ============================= -->
+  <main class="admin-main">
+    <div class="container admin-container">
+      <!-- Título e subtítulo -->
+      <div class="section-heading admin-section-heading">
+        <h1 class="section-title">Painel Administrativo</h1>
+        <p class="section-subtitle">Gerencie os produtos da sua loja</p>
+      </div>
+
+      <!-- ============================= -->
+      <!-- CARDS DE RESUMO -->
+      <!-- ============================= -->
+      <section class="admin-summary" aria-label="Resumo dos produtos">
+        <div class="admin-summary-grid">
+          <!-- Card: Produtos cadastrados -->
+          <article class="admin-summary-card">
+            <h2 class="admin-summary-label">Produtos cadastrados</h2>
+            <p id="total-products" class="admin-summary-value">0</p>
+          </article>
+
+          <!-- Card: Produtos ativos -->
+          <article class="admin-summary-card">
+            <h2 class="admin-summary-label">Produtos ativos</h2>
+            <p id="active-products" class="admin-summary-value">0</p>
+          </article>
+
+          <!-- Card: Produtos inativos -->
+          <article class="admin-summary-card">
+            <h2 class="admin-summary-label">Produtos inativos</h2>
+            <p id="inactive-products" class="admin-summary-value">0</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================= -->
+      <!-- FORMULÁRIO DE ADIÇÃO -->
+      <!-- ============================= -->
+      <section class="admin-form-section" aria-labelledby="add-product-title">
+        <div class="section-heading admin-subheading">
+          <h2 id="add-product-title" class="section-title">Adicionar produto</h2>
+        </div>
+
+        <form id="product-form" class="admin-form" enctype="multipart/form-data">
+          <!-- Nome do produto -->
+          <div class="form-group">
+            <label for="product-name" class="form-label">Nome do produto</label>
+            <input 
+              type="text" 
+              id="product-name" 
+              name="name" 
+              class="form-input" 
+              placeholder="Ex.: Vestido Midi Floral" 
+              required 
+            />
+          </div>
+
+          <!-- Descrição -->
+          <div class="form-group">
+            <label for="product-description" class="form-label">Descrição</label>
+            <textarea 
+              id="product-description" 
+              name="description" 
+              class="form-input form-textarea" 
+              rows="4" 
+              placeholder="Descreva o produto, tecido, modelagem..."
+            ></textarea>
+          </div>
+
+          <!-- Preço e Preço antigo -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="product-price" class="form-label">Preço (R$)</label>
+              <input 
+                type="number" 
+                id="product-price" 
+                name="price" 
+                class="form-input" 
+                step="0.01" 
+                min="0" 
+                placeholder="0,00" 
+                required 
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="product-old-price" class="form-label">Preço antigo (opcional)</label>
+              <input 
+                type="number" 
+                id="product-old-price" 
+                name="old_price" 
+                class="form-input" 
+                step="0.01" 
+                min="0" 
+                placeholder="0,00" 
+              />
+            </div>
+          </div>
+
+          <!-- Categoria -->
+          <div class="form-group">
+            <label for="product-category" class="form-label">Categoria</label>
+            <select id="product-category" name="category" class="form-input form-select" required>
+              <option value="Vestidos">Vestidos</option>
+              <option value="Conjuntos">Conjuntos</option>
+              <option value="Blusas">Blusas</option>
+              <option value="Calças">Calças</option>
+              <option value="Acessórios">Acessórios</option>
+            </select>
+          </div>
+
+          <!-- Upload de imagem -->
+          <div class="form-group">
+            <label class="form-label">Imagem do produto</label>
+            <label for="product-image" class="file-upload-label">
+             Escolher imagem
+            </label>
+           <input 
+           type="file" 
+           id="product-image" 
+           name="image" 
+           class="form-input form-file" 
+           accept="image/jpeg, image/png, image/webp" 
+           />
+           <span id="file-name" class="file-name">Nenhum arquivo selecionado</span>
+           <div id="image-preview" class="image-preview" aria-live="polite"></div>
+           <p class="form-help">Formatos aceitos: JPG, JPEG, PNG, WEBP</p>
+          </div>
+
+          <!-- Checkbox ativo -->
+          <div class="form-group form-checkbox">
+            <input 
+              type="checkbox" 
+              id="product-active" 
+              name="active" 
+              class="form-checkbox-input" 
+              checked 
+            />
+            <label for="product-active" class="form-checkbox-label">Produto ativo</label>
+          </div>
+
+          <!-- Área de mensagens -->
+          <div id="admin-message" class="admin-message" role="alert" aria-live="polite"></div>
+
+          <!-- Botão de envio -->
+          <button type="submit" id="save-product" class="btn btn-primary admin-submit-btn">
+            Adicionar produto
+          </button>
+        </form>
+      </section>
+
+      <!-- ============================= -->
+      <!-- LISTA DE PRODUTOS -->
+      <!-- ============================= -->
+      <section class="admin-products-section" aria-labelledby="admin-products-title">
+        <div class="section-heading admin-subheading">
+          <h2 id="admin-products-title" class="section-title">Produtos cadastrados</h2>
+        </div>
+
+        <!-- Container onde os produtos serão carregados dinamicamente -->
+        <div id="admin-products" class="admin-products-grid" aria-live="polite">
+          <!-- Os produtos serão inseridos via JavaScript -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ============================= -->
+  <!-- MODAL DE EDIÇÃO -->
+  <!-- ============================= -->
+  <div id="edit-product-modal" class="modal admin-modal" role="dialog" aria-modal="true" aria-labelledby="edit-modal-title" hidden>
+    <div class="modal-backdrop" data-close-edit-modal></div>
+    <div class="modal-content admin-modal-content">
+      <button class="modal-close" data-close-edit-modal aria-label="Fechar modal de edição" title="Fechar">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <h3 id="edit-modal-title" class="modal-title">Editar produto</h3>
+
+      <form id="edit-product-form" class="admin-form" enctype="multipart/form-data">
+        <!-- ID do produto (oculto) -->
+        <input type="hidden" id="edit-product-id" name="id" />
+
+        <div class="form-group">
+          <label for="edit-product-name" class="form-label">Nome do produto</label>
+          <input 
+            type="text" 
+            id="edit-product-name" 
+            name="name" 
+            class="form-input" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="edit-product-description" class="form-label">Descrição</label>
+          <textarea 
+            id="edit-product-description" 
+            name="description" 
+            class="form-input form-textarea" 
+            rows="4"
+          ></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-product-price" class="form-label">Preço (R$)</label>
+            <input 
+              type="number" 
+              id="edit-product-price" 
+              name="price" 
+              class="form-input" 
+              step="0.01" 
+              min="0" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="edit-product-old-price" class="form-label">Preço antigo (opcional)</label>
+            <input 
+              type="number" 
+              id="edit-product-old-price" 
+              name="old_price" 
+              class="form-input" 
+              step="0.01" 
+              min="0" 
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="edit-product-category" class="form-label">Categoria</label>
+          <select id="edit-product-category" name="category" class="form-input form-select" required>
+            <option value="Vestidos">Vestidos</option>
+            <option value="Conjuntos">Conjuntos</option>
+            <option value="Blusas">Blusas</option>
+            <option value="Calças">Calças</option>
+            <option value="Acessórios">Acessórios</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Imagem do produto (opcional)</label>
+          <label for="edit-product-image" class="file-upload-label">
+            Escolher nova imagem
+          </label>
+          <input 
+              type="file" 
+              id="edit-product-image" 
+              name="image" 
+              class="form-input form-file" 
+              accept="image/jpeg, image/png, image/webp" 
+          />
+          <span id="edit-file-name" class="file-name">Nenhum arquivo selecionado</span>
+          <p class="form-help">Deixe vazio para manter a imagem atual.</p>
+        </div>
+
+        <div class="form-group form-checkbox">
+          <input 
+            type="checkbox" 
+            id="edit-product-active" 
+            name="active" 
+            class="form-checkbox-input" 
+            checked 
+          />
+          <label for="edit-product-active" class="form-checkbox-label">Produto ativo</label>
+        </div>
+
+        <div class="admin-modal-actions">
+          <button type="submit" class="btn btn-primary">Salvar alterações</button>
+          <button type="button" class="btn btn-outline" data-close-edit-modal>Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- MODAL DE EXCLUSÃO -->
+  <!-- ============================= -->
+  <div id="delete-product-modal" class="modal admin-modal" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title" style="display: none;">
+    <div class="modal-backdrop" data-close-delete-modal></div>
+    <div class="modal-content admin-modal-content">
+      <button class="modal-close" data-close-delete-modal aria-label="Fechar modal de exclusão" title="Fechar">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <h3 id="delete-modal-title" class="modal-title">Excluir produto</h3>
+      <p class="delete-message">Tem certeza que deseja excluir este produto?</p>
+
+      <div class="admin-modal-actions">
+        <button type="button" id="confirm-delete-btn" class="btn btn-danger">Excluir produto</button>
+        <button type="button" class="btn btn-outline" data-close-delete-modal>Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>
